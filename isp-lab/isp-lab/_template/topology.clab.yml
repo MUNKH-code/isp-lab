@@ -1,0 +1,18 @@
+name: p00-ospf
+
+topology:
+  defaults:
+    kind: linux
+    # Check https://quay.io/repository/frrouting/frr?tab=tags for the newest tag and pin it
+    image: quay.io/frrouting/frr:10.2.1
+  nodes:
+    r1:
+      binds:
+        - configs/r1/daemons:/etc/frr/daemons
+        - configs/r1/frr.conf:/etc/frr/frr.conf
+    r2:
+      binds:
+        - configs/r2/daemons:/etc/frr/daemons
+        - configs/r2/frr.conf:/etc/frr/frr.conf
+  links:
+    - endpoints: ["r1:eth1", "r2:eth1"]

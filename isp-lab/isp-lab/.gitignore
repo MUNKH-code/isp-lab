@@ -1,0 +1,29 @@
+# containerlab runtime folders
+clab-*/
+.*.clab.yml.bak
+
+# secrets — never commit
+*.key
+*.pem
+.env
+*secret*
+*password*
+vault_pass*
+id_rsa*
+id_ed25519*
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# packet captures (large) — commit only small, sanitized ones on purpose with git add -f
+*.pcap
+*.pcapng
